@@ -1,0 +1,27 @@
+version: "3.8"
+
+networks:
+    database:
+        name: database_network
+        external: true
+    backend:
+        name: backend_network
+        external: true
+
+services:
+    worker-sendVerificationEmail:
+        image: laravel_backend
+        networks:
+            - database
+            - backend
+        volumes:
+            - ./:/var/www/html
+        command: [ "php", "artisan", "rabbitmq:sendVerifyEmailWorker" ]
+        deploy:
+            replicas: 1
+            resources:
+                limits:
+                    cpus: "0.5"
+                    memory: 512M
+            restart_policy:
+                condition: on-failure
