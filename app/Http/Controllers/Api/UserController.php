@@ -6,7 +6,6 @@ use App\Exceptions\ClassNotFoundException;
 use App\Exceptions\GenerateEntityException;
 use App\Facade\UserFacade;
 use App\Http\Requests\User\InsertUserRequest;
-use Core\Domain\Users\Exceptions\UsernameAlreadyExists;
 use Illuminate\Routing\Controller as BaseController;
 use Exception;
 use \Illuminate\Http\Response;
