@@ -2,8 +2,8 @@
 
 namespace App\Mail\User;
 
+use Core\Domain\Users\Entity\UserVerificationEmailEntity;
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
@@ -16,7 +16,7 @@ class UserVerifyEmail extends Mailable
     /**
      * Create a new message instance.
      */
-    public function __construct()
+    public function __construct(private UserVerificationEmailEntity $userVerificationEmailEntity)
     {
         //
     }
@@ -38,6 +38,9 @@ class UserVerifyEmail extends Mailable
     {
         return new Content(
             view: 'Email.User.verify-email',
+            with: [
+                'token' => $this->userVerificationEmailEntity->getToken()
+            ]
         );
     }
 
