@@ -7,6 +7,7 @@ use App\Exceptions\GenerateEntityException;
 use Core\Domain\Base\Interfaces\EntityInterface;
 use Exception;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 use Ramsey\Uuid\Uuid;
 use ReflectionClass;
 use ReflectionProperty;
@@ -30,7 +31,7 @@ class ClassMapper
         foreach ($data as $key => $value) {
             $methodName = 'set' . ucfirst($key);
             if(!method_exists($className, $methodName)) {
-                throw new Exception("Property '${$methodName}' was Not Found", 500);
+                throw new Exception("Property '{$methodName}' was Not Found", 500);
             }
 
             if('uuid' === $key && $value instanceof Uuid) {
@@ -80,7 +81,7 @@ class ClassMapper
         foreach ($properties as $property) {
             $methodName = 'get' . ucfirst($property->getName());
             if(!method_exists($entity, $methodName)) {
-                throw new Exception("Property '${$methodName}' was Not Found", 500);
+                throw new Exception("Property '{$methodName}' was Not Found", 500);
             }
 
             $propertyValue = $entity->$methodName();
@@ -89,7 +90,7 @@ class ClassMapper
                 continue;
             }
 
-            $formattedData[$property->getName()] = $propertyValue;
+            $formattedData[Str::snake($property->getName())] = $propertyValue;
         }
 
         return $formattedData;
