@@ -5,7 +5,7 @@ namespace App\Adapters\Repository\User;
 use Core\Domain\Users\Entity\UserEntity;
 use Core\Domain\Users\Ports\Out\InsertUserOutputPort;
 
-class InsertUserAdapter extends UserBaseAdapter implements InsertUserOutputPort
+class InsertUserAdapter extends UserBaseRepositoryAdapter implements InsertUserOutputPort
 {
     /**
      * @throws \Exception

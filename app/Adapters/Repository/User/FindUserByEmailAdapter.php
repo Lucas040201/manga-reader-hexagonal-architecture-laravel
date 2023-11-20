@@ -5,7 +5,7 @@ namespace App\Adapters\Repository\User;
 use Core\Domain\Users\Entity\UserEntity;
 use Core\Domain\Users\Ports\Out\FindUserByEmailOutputPort;
 
-class FindUserByEmailAdapter extends UserBaseAdapter implements FindUserByEmailOutputPort
+class FindUserByEmailAdapter extends UserBaseRepositoryAdapter implements FindUserByEmailOutputPort
 {
 
     /**
