@@ -31,7 +31,7 @@ abstract class BaseConsumer extends Command
     {
         return function (AMQPMessage $message) {
             try {
-                echo "[x] {$this->queueName} Received: {$message->getBody()}" . PHP_EOL;
+                echo "\n[x] {$this->queueName} Received: {$message->getBody()}" . PHP_EOL;
                 $this->executeQueue($message);
                 $this->rabbitMqService->consumeAck($message, $this->queueName);
             } catch (\Exception $e) {
