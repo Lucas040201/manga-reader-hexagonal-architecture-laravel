@@ -25,3 +25,19 @@ services:
                     memory: 512M
             restart_policy:
                 condition: on-failure
+    worker-sendPasswordRecovery:
+        image: laravel_backend
+        networks:
+            - database
+            - backend
+        volumes:
+            - ./:/var/www/html
+        command: [ "php", "artisan", "rabbitmq:sendPasswordRecovery" ]
+        deploy:
+            replicas: 1
+            resources:
+                limits:
+                    cpus: "0.5"
+                    memory: 512M
+            restart_policy:
+                condition: on-failure

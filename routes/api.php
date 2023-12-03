@@ -22,6 +22,8 @@ Route::prefix('user')->group(function() {
     Route::controller(UserController::class)->group(function() {
         Route::post('/', 'create');
         Route::post('confirm/{token}', 'confirmUser');
+        Route::post('recover-password', 'recoverPassword');
+        Route::patch('reset-password', 'resetPassword');
 
         Route::prefix('{uuid}')->group(function () {
            Route::get('/', 'find');

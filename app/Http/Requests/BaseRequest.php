@@ -5,8 +5,9 @@ namespace App\Http\Requests;
 use Illuminate\Foundation\Http\FormRequest;
 use \Illuminate\Contracts\Validation\Validator;
 use Illuminate\Http\Exceptions\HttpResponseException;
-use Illuminate\Http\JsonResponse;
 use Illuminate\Validation\ValidationException;
+use Symfony\Component\HttpFoundation\Response;
+
 abstract class BaseRequest extends FormRequest
 {
     protected function failedValidation(Validator $validator)
@@ -16,7 +17,7 @@ abstract class BaseRequest extends FormRequest
             return implode("\n" , $arr);
         }, $errors)));
         throw new HttpResponseException(
-            response()->json(['Success' => false, 'message' => $errors], JsonResponse::HTTP_UNPROCESSABLE_ENTITY)
+            response()->json(['Success' => false, 'message' => $errors], Response::HTTP_UNPROCESSABLE_ENTITY)
         );
     }
 }

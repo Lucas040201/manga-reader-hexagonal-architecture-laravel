@@ -30,7 +30,7 @@ class SendAccountVerificationEmailConsumer extends BaseConsumer
      *
      * @var string
      */
-    protected $description = 'Send Email Consumer';
+    protected $description = 'Send Account verification email Consumer';
 
     protected string $queueName = QueueNames::SEND_ACCOUNT_VERIFICATION_QUEUE;
 
