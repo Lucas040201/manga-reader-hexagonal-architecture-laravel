@@ -43,4 +43,19 @@ class UserController extends BaseController
 
     public function find($uuid) {
     }
+
+    public function confirmUser(string $token): Response
+    {
+        try {
+            $this->userFacade->confirmAccount($token);
+
+            return response([
+                'message' => 'Account verified successfully.',
+            ], 200);
+        } catch (Exception $e) {
+            return response([
+                'message' => $e->getMessage()
+            ], $e->getCode());
+        }
+    }
 }

@@ -21,6 +21,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::prefix('user')->group(function() {
     Route::controller(UserController::class)->group(function() {
         Route::post('/', 'create');
+        Route::post('confirm/{token}', 'confirmUser');
+
         Route::prefix('{uuid}')->group(function () {
            Route::get('/', 'find');
         });

@@ -28,7 +28,8 @@ class User extends Authenticatable
         'email',
         'password',
         'phone_number',
-        'email_confirmation',
+        'token',
+        'status',
         'profile_picture'
     ];
 
