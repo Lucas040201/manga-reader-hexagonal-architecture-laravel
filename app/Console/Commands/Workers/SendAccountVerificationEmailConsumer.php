@@ -5,14 +5,14 @@ namespace App\Console\Commands\Workers;
 use App\Constants\QueueNames;
 use PhpAmqpLib\Message\AMQPMessage;
 
-class SendEmailConsumer extends BaseConsumer
+class SendAccountVerificationEmailConsumer extends BaseConsumer
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'rabbitmq:sendVerifyEmailWorker';
+    protected $signature = 'rabbitmq:sendAccount';
 
     /**
      * The console command description.
