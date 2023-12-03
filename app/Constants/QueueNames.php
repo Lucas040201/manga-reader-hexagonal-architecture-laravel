@@ -4,5 +4,5 @@ namespace App\Constants;
 
 class QueueNames
 {
-    const SEND_VERIFY_EMAIL_QUEUE = 'send_verify_email_queue';
+    const SEND_ACCOUNT_VERIFICATION_QUEUE = 'send_account_verification_queue';
 }
