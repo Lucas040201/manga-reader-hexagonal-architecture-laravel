@@ -9,14 +9,14 @@ networks:
         external: true
 
 services:
-    worker-sendVerificationEmail:
+    worker-sendAccountVerificationEmail:
         image: laravel_backend
         networks:
             - database
             - backend
         volumes:
             - ./:/var/www/html
-        command: [ "php", "artisan", "rabbitmq:sendVerifyEmailWorker" ]
+        command: [ "php", "artisan", "rabbitmq:sendAccountVerificationEmail" ]
         deploy:
             replicas: 1
             resources:
