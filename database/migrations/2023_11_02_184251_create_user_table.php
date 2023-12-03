@@ -20,7 +20,11 @@ return new class extends Migration
             $table->string('email', 150)->unique('user_email');
             $table->string('password');
             $table->string('phone_number', 11)->nullable();
-            $table->enum('email_confirmation', [1,2,3,4])->default(1);
+            $table->string('token', 32)->unique();
+            $table->enum('status', [
+                1,
+                2
+            ])->default(1);
             $table->string('profile_picture')->nullable();
             $table->timestamps();
             $table->index([
