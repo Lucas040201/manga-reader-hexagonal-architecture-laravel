@@ -40,4 +40,15 @@ Abstract class RepositoryBase
         return ClassMapper::getEntity($this->entity, [], $resource);
     }
 
+    public function delete(string $needle, int $id)
+    {
+        return $this->model::where($needle, $id)->delete();
+    }
+
+    public function update(int $id, EntityInterface $entity): bool
+    {
+        $entity = ClassMapper::getArrayFromEntity($entity);
+        return !!$this->model::where('id', $id)->update($entity);
+    }
+
 }
