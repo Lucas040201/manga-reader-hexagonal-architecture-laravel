@@ -7,7 +7,7 @@ use App\Services\RabbitMQService;
 use Core\Domain\Users\Entity\UserEntity;
 use Core\Domain\Users\Ports\Out\SendVerificationEmailOutputPort;
 
-class SendVerificationEmailUserAdapter implements SendVerificationEmailOutputPort
+class SendAccountVerificationEmailAdapter implements SendVerificationEmailOutputPort
 {
 
     public function __construct(
@@ -19,7 +19,7 @@ class SendVerificationEmailUserAdapter implements SendVerificationEmailOutputPor
     public function sendEmail(UserEntity $user): void
     {
         $this->rabbitMQService->publish(
-            QueueNames::SEND_VERIFY_EMAIL_QUEUE,
+            QueueNames::SEND_ACCOUNT_VERIFICATION_QUEUE,
             [
                 'email' => $user->getEmail(),
             ]
