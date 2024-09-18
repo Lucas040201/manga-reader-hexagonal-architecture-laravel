@@ -1,66 +1,44 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<h3  align="center">Manga Reader</h3>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+  
 
-## About Laravel
+## 📝 Sumário
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- [Sobre](#sobre)
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- [Ambiente](#ambiente)
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- [Começando](#comecando)
 
-## Learning Laravel
+- [Informações Adicionais](#info)  
+  
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## 🧐 Sobre <a name = "sobre"></a>
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+  
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+<p>Este é o Manga Reader, um leitor de quadrinhos em desenvolvimento, que contará com gerenciamento de usuários, scans e quadrinhos.</p>
+<p>Este projeto não deve ser levado a sério, pois é apenas uma iniciativa voltada para estudos de Arquitetura de Software, com foco na Arquitetura Hexagonal.</p>
 
-## Laravel Sponsors
+  
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+## 🏝️ Ambiente <a name="ambiente"></a>
 
-### Premium Partners
+<p>Este projeto foi feito com Laravel 10 utilizando o PHP 8.2. Para melhor funcionamento, utilize o ambiente docker disponibilizado <a href="https://github.com/Lucas040201/docker-laravel" target="_blank">aqui</a>.</p>
+  
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+## 🏁 Começando <a name = "comecando"></a>
 
-## Contributing
+  
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+<p>
+Para executar este projeto, é imprescindível ter o ambiente Docker que é disponibilizado <a href="https://github.com/Lucas040201/docker-laravel" target="_blank">aqui</a>.</p>
+<p>Esta aplicação utiliza submódulos, então é recomendado que siga os passos a seguir para a configuração correta dos módulos.</p>
+<p>Inicialize o submódulo com o comando <code>git submodule init</code>, em seguida, baixe o submódulo com o seguinte comando <code>git submodule update --recursive</code></p>
+<p>Seguindo esses passos, o core da aplicação estará na pasta correta e seu ambiente estara de pé pronto para desenvolver e testar.</p>
 
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+  
+## :heavy_plus_sign: Informações adicionais <a name="info"></a>
+ <p>Este mini projeto foi desenvolvido com o objetivo de estudar a Arquitetura Hexagonal e aplicá-la em diferentes cenários, como em ambientes Docker, filas e processamento em background (workers e consumers).</p>
+  
+## 👌 Fim
